@@ -10,7 +10,7 @@ do_copy_config()
     DEST=.
   fi
 
-  DEST=/home/tv/aceproxy-master/$DEST/$CONFIG
+  DEST=/home/tv/aceproxy/$DEST/$CONFIG
 
   if [[ ! -f $SRC ]]; then
     return 0
