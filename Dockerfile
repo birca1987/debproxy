@@ -6,15 +6,24 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /tmp
 
 RUN apt-get update -y && \
+    echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list && \
+    apt-get update -y && \
+    apt-get upgrade -y && \
     apt-get install -y apt-utils && \
     apt-get install -y \
       ca-certificates \
       libpython2.7 \
       python-apsw \
-      python-gevent \
+      python-setuptools \
+      python-pip \ 
+      python-dev  \
+      build-essential \
+      pip install --upgrade pip \
+      pip install greenlet gevent psutil \
       python-m2crypto \
-      python-psutil \
       supervisor \
+      nano \
+      mc \
       unzip \
       wget \
     && \
