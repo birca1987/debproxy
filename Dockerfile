@@ -5,9 +5,9 @@ FROM debian:wheezy
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /tmp
 
+RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
+
 RUN apt-get update -y && \
-    echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list && \
-    apt-get update -y && \
     apt-get upgrade -y && \
     apt-get install -y apt-utils && \
     apt-get install -y \
