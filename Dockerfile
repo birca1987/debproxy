@@ -1,8 +1,6 @@
 # Set base to Debian wheezy
 FROM debian:wheezy
 
-MAINTAINER Serge A. Levin <serge.levin.spb@gmail.com>
-
 # install base packages
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /tmp
@@ -20,7 +18,6 @@ RUN apt-get update -y && \
       unzip \
       wget \
     && \
-    apt-get install -y --no-install-recommends vlc-nox && \
 
 # create user to run aceproxy
     useradd --system --create-home --no-user-group --gid nogroup aceproxy && \
