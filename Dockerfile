@@ -37,10 +37,11 @@ RUN apt-get update -y && \
 
 # add services
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
 
-EXPOSE 8000
+EXPOSE 22 8000 8621 62062 9944 9903
 VOLUME /etc/aceproxy
 
 WORKDIR /
