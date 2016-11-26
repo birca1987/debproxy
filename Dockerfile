@@ -9,14 +9,13 @@ RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > 
 RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get autoremove
+RUN apt-get install -y python-setuptools
 
 RUN apt-get update -y && \
-    apt-get install -y apt-utils && \
     apt-get install -y \
       ca-certificates \
       libpython2.7 \
-      python-gevent
-      python-setuptools \
+      python-gevent \
       python-pip \ 
       python-dev \
       build-essential \
