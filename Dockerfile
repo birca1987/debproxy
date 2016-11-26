@@ -20,7 +20,7 @@ RUN apt-get update -y && \
     && \
 
 # create user to run aceproxy
-    useradd --system --create-home --no-user-group --gid nogroup aceproxy && \
+    useradd --system --create-home --no-user-group --gid nogroup tv && \
 
 # install acestream-engine
     wget  -o - http://dl.acestream.org/debian/7/acestream_3.0.5.1_debian_7.4_x86_64.tar.gz && \
@@ -31,8 +31,8 @@ RUN apt-get update -y && \
 
 # obtain and unpack aceproxy
     wget -o - https://github.com/ValdikSS/aceproxy/archive/a937b0c1.zip -O aceproxy.zip && \
-    unzip -d /home/aceproxy aceproxy.zip && \
-    mv /home/aceproxy/aceproxy-* /home/aceproxy/aceproxy && \
+    unzip -d /home/tv aceproxy.zip && \
+    mv /home/tv/aceproxy-* /home/tv/aceproxy && \
     rm -rf /tmp/*
 
 # add services
