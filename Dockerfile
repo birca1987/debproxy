@@ -17,7 +17,7 @@ RUN apt-get update -y && \
       python-apsw \
       python-setuptools \
       python-pip \ 
-      python-dev  \
+      python-dev \
       build-essential \
       pip install --upgrade pip \
       pip install greenlet gevent psutil \
