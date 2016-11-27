@@ -30,7 +30,7 @@ do_copy_config()
 do_copy_config aceconfig.py
 do_copy_config p2pproxy.py     plugins/config
 do_copy_config torrenttv.py    plugins/config
-do_copy_config playlist.py       plugins/config
+do_copy_config playlist.py     plugins/config
 
 #adjust_settings
 
