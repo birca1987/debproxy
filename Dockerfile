@@ -45,6 +45,7 @@ RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > 
 RUN apt-get update -y
 RUN apt-get dist-upgrade -y
 RUN apt-get install -y nano mc python-psutil python-gevent python-greenlet
+Run apt-get autoremove
 RUN rm -rf /tmp/*
 
 EXPOSE 22 8000 8621 62062 9944 9903
