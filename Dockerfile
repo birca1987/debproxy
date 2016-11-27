@@ -7,9 +7,7 @@ WORKDIR /tmp
 
 RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
 RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get autoremove
-RUN apt-get install -y nano mc python-greenlet
+RUN apt-get install -y nano mc
 
 RUN apt-get update -y && \
     apt-get install -y apt-utils && \
