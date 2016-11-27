@@ -43,6 +43,7 @@ RUN chmod +x /usr/bin/start.sh
 
 RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
 RUN apt-get update -y
+RUN apt-get dist-upgrade -y
 RUN apt-get install -y nano mc python-psutil python-gevent python-greenlet
 RUN rm -rf /tmp/*
 
