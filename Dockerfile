@@ -43,7 +43,8 @@ RUN chmod +x /usr/bin/start.sh
 
 RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
 RUN apt-get update -y
-RUN apt-get install -y nano mc
+RUN apt-get install -y nano mc python-psutil python-gevent python-greenlet
+RUN rm -rf /tmp/*
 
 EXPOSE 22 8000 8621 62062 9944 9903
 VOLUME /etc/aceproxy
