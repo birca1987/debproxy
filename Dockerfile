@@ -1,13 +1,9 @@
 # Set base to Debian wheezy
-FROM debian:wheezy
+FROM debian:7.4
 
 # install base packages
 ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /tmp
-
-RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
-RUN apt-get update -y
-RUN apt-get install -y nano mc
 
 RUN apt-get update -y && \
     apt-get install -y apt-utils && \
@@ -44,6 +40,10 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
+
+RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
+RUN apt-get update -y
+RUN apt-get install -y nano mc
 
 EXPOSE 22 8000 8621 62062 9944 9903
 VOLUME /etc/aceproxy
