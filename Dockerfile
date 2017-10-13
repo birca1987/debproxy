@@ -10,14 +10,18 @@ RUN apt-get update -y && \
     apt-get install -y \
       ca-certificates \
       libpython2.7 \
+      jq \ 
+      net-tools \
       python-apsw \
       python-gevent \
       python-m2crypto \
       python-psutil \
+      python-requests \
       supervisor \
       unzip \
       wget \
     && \
+    apt-get install -y --no-install-recommends vlc-nox && \
 
 # create user to run aceproxy
     useradd --system --create-home --no-user-group --gid nogroup tv && \
