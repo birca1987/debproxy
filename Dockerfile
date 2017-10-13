@@ -1,5 +1,5 @@
-# Set base to Debian scratch
-FROM debian:scratch
+# Set base to Debian stretch
+FROM debian:stretch
 
 # install base packages
 ENV DEBIAN_FRONTEND=noninteractive
