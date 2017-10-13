@@ -13,6 +13,10 @@ RUN apt-get update -y && \
       jq \
       tor \
       net-tools \
+      cron \
+      nano \
+      mc \
+      greenlet \
       python-apsw \
       python-gevent \
       python-m2crypto \
