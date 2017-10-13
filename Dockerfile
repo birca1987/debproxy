@@ -27,6 +27,7 @@ RUN apt-get update -y && \
       wget \
     && \
     apt-get install -y --no-install-recommends vlc-nox && \
+    mkdir -p /mnt/media/playlists && \
 
 # create user to run aceproxy
     useradd --system --create-home --no-user-group --gid nogroup tv && \
@@ -46,15 +47,15 @@ RUN apt-get update -y && \
 # add services
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+ADD ace.hls_parser.sh /mnt/media/playlists/ace.hls_parser.sh
+RUN chmod +x /mnt/media/playlists/ace.hls_parser.sh
+RUN /mnt/media/playlists/ace.hls_parser.sh
 ADD start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
 
-RUN echo 'deb http://ftp.de.debian.org/debian/ stretch main contrib non-free' > /etc/apt/sources.list.d/debianstretch.list
-RUN apt-get update -y
-RUN apt-get install -y nano mc python-psutil python-gevent python-greenlet
 RUN rm -rf /tmp/*
 
-EXPOSE 22 8000 8621 62062 9944 9903
+EXPOSE 8000 8621 62062 9944 9903 6878
 VOLUME /etc/aceproxy
 
 WORKDIR /
