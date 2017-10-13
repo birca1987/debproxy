@@ -16,7 +16,7 @@ RUN apt-get update -y && \
       cron \
       nano \
       mc \
-      greenlet \
+      python-greenlet \
       python-apsw \
       python-gevent \
       python-m2crypto \
