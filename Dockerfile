@@ -1,5 +1,5 @@
-# Set base to Debian jessie
-FROM debian:jessie
+# Set base to Debian scratch
+FROM debian:scratch
 
 # install base packages
 ENV DEBIAN_FRONTEND=noninteractive
@@ -10,7 +10,8 @@ RUN apt-get update -y && \
     apt-get install -y \
       ca-certificates \
       libpython2.7 \
-      jq \ 
+      jq \
+      tor \
       net-tools \
       python-apsw \
       python-gevent \
