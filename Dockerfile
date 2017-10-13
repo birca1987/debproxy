@@ -1,5 +1,5 @@
-# Set base to Debian wheezy
-FROM debian:7.4
+# Set base to Debian jessie
+FROM debian:jessie
 
 # install base packages
 ENV DEBIAN_FRONTEND=noninteractive
@@ -23,10 +23,9 @@ RUN apt-get update -y && \
     useradd --system --create-home --no-user-group --gid nogroup tv && \
 
 # install acestream-engine
-    wget  -o - http://dl.acestream.org/debian/7/acestream_3.0.5.1_debian_7.4_x86_64.tar.gz && \
-    tar --show-transformed-names --transform='s/acestream_3.0.5.1_debian_7.4_x86_64/acestream/' -vzxf acestream_3.0.5.1_debian_7.4_x86_64.tar.gz && \
+    wget  -o - http://dl.acestream.org/linux/acestream_3.1.16_debian_8.7_x86_64.tar.gz && \
+    tar --show-transformed-names --transform='s/acestream_3.1.16_debian_8.7_x86_64/acestream/' -vzxf acestream_3.1.16_debian_8.7_x86_64.tar.gz && \
     mv acestream /usr/share && \
-    ln -s /usr/share/acestream/acestreamengine /usr/bin/acestreamengine && \
     rm -rf /tmp/* && \
 
 # obtain and unpack aceproxy
