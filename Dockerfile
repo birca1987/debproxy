@@ -1,5 +1,5 @@
-# Set base to Debian stretch
-FROM debian:stretch
+# Set base to Debian jessie
+FROM debian:jessie
 
 # install base packages
 ENV DEBIAN_FRONTEND=noninteractive
