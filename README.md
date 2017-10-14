@@ -1,7 +1,7 @@
 docker-acestream
 =========================
 
-Debian based docker image for aceproxy.
+Debian based docker image for acestream.
 
 
 Рекомендованные опции запуска AceStream
