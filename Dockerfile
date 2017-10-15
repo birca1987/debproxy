@@ -27,12 +27,13 @@ RUN apt-get update -y && \
     wget  -o - http://dl.acestream.org/linux/acestream_3.1.16_debian_8.7_x86_64.tar.gz && \
     tar --show-transformed-names --transform='s/acestream_3.1.16_debian_8.7_x86_64/acestream/' -vzxf acestream_3.1.16_debian_8.7_x86_64.tar.gz && \
     mv acestream /usr/share && \
-    rm -rf /tmp/*
+    rm -rf /tmp/* /etc/tor/torrc
 
 # add services
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD ace.hls_parser.sh /mnt/media/playlists/ace.hls_parser.sh
+ADD torrc /etc/tor/torrc
 RUN chmod +x /mnt/media/playlists/ace.hls_parser.sh
 RUN /mnt/media/playlists/ace.hls_parser.sh
 ADD start.sh /usr/bin/start.sh
