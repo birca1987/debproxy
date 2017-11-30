@@ -12,8 +12,8 @@ header="#EXTM3U"
 newline="ZFZFaZZZ"
 pron="Эротика"
 
-url_prefix="http://192.168.0.10:6878/ace/getstream?id="
-url_prefix1="http://192.168.0.10:6878/ace/manifest.m3u8?id="
+url_prefix="http://192.168.0.x:6878/ace/getstream?id="
+url_prefix1="http://192.168.0.x:6878/ace/manifest.m3u8?id="
 url_postfix=""
 
 mkdir -p $filepath >> /dev/null 2>&1
